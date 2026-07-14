@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Peralta&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+}
+
+.bird-box{
+    top: 100px;
+    left: 560px;
+    position: absolute;
+    width: 80px;
+    /* height: 80px; */
+}
+.bird-box img{
+    width: 100%;
+}
+
+
+.background{
+    left: 0px;
+    background-image: url("assets/background.webp");
+    background-size: auto 100%;
+    position: fixed;
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 100vh;
+}
+.background img{
+    /* width: 100%; */
+    height: 100%;
+}
+
+.blocks{
+
+    /* background-color: rgba(0, 255, 255, 0.418); */
+    gap: 200px;
+    display: flex;
+    /* justify-content: end    ; */
+    align-items: flex-end;
+    /* width: 100%; */
+    height: 100vh;
+    /* margin-left: 100%; */
+    position: absolute;
+    left: 101%;
+
+}
+.block{
+    flex-direction: column;
+    justify-content: space-between;
+    display: flex;
+    width: 180px;
+    height: 25%;
+    background: linear-gradient(90deg,rgba(9, 133, 7, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(17, 112, 47, 1) 100%);
+    flex-shrink: 0;
+    align-items: center ;
+}
+
+.top{
+    height:35px;
+    width: 120%;
+background: linear-gradient(0deg,rgba(9, 133, 7, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(17, 112, 47, 1) 100%);
+}
+
+/* Bottom pipe */
+.bottom{
+    height:220px;
+background-color: aqua;
+}
+
+.score{
+    min-width: 180px;
+    padding: 10px;
+    font-size: 25px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    background-color: #e1d693;
+    width: 100%;
+    padding: 5px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+    position: absolute;
+}
+
+.menu-box{
+    z-index: 9999;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    gap: 20px;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.menu h1{
+    font-family: 'Peralta', cursive;
+    font-size: 40px;
+    color: #0e7c0e;
+}
+.menu p{
+    font-family: poppins;
+    font-size: 15px;
+    color: black;
+}
+.menu h2{
+    font-family: poppins;
+    font-size: 20px;
+    color: black;
+}
+
+.food{
+    z-index: 99999;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 200px;
+}
