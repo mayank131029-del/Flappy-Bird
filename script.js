@@ -33,9 +33,6 @@ let count = 0
 function gravity() {
 
     if (!paused) {
-
-
-
         if (position >= vh) {
             collision()
         }
@@ -154,16 +151,16 @@ function countupdate() {
         score.innerText = "Score: " + sc
         document.title = obs.length + "," + obs[obs.length - 1].style.height
 
-        if (obs.length % 5 == 0) {
+        if (obs.length % 2 == 0) {
             // alert("hello")
             let food = document.createElement("div")
             food.classList.add("food")
-            // food.style.left = `${foodposition}px`
-            food.style.left = `${obs[obs.length - 1].getBoundingClientRect().left + 100}px`
+            food.style.left = `${foodposition}px`
+            // food.style.left = `${obs[obs.length - 1].getBoundingClientRect().left + 100}px`
             const remaingheight = 100 - obs[obs.length - 1].style.height.replace("%", "")
             const min = 5
             const max = remaingheight - 5
-            food.style.top = Math.floor((Math.random() *(max - min))+ min ) + "%"
+            food.style.top = Math.floor((Math.random() * (max - min)) + min) + "%"
             obsBox.appendChild(food)
             foods = document.querySelectorAll(".food")
             // document.title = foods.length
@@ -182,6 +179,9 @@ function countupdate() {
                 foodaudio.play()
                 food.remove()
                 speed += 0.2
+                if (speed === 10) {
+                    speed = 10
+                }
                 foods = document.querySelectorAll(".food")
                 sc += 5
                 score.innerText = "Score: " + sc
@@ -192,36 +192,36 @@ function countupdate() {
 }
 
 
-    function collision() {
-        if (sc > highscorevalue) {
-            highscorevalue = sc
-            highscore.innerText = "High Score: " + highscorevalue
-            localStorage.setItem("highscore", highscorevalue)
-
-        }
-        music.pause()
-        music.currentTime = 0
-        const gameovermusic = new Audio("assets/gameover.mp3")
-        gameovermusic.play()
-        console.log(count)
-        paused = true
-        gameover = true
-        menu.style.display = "flex"
-        title.innerText = "Game Over"
-        yrScore.innerText = "Your Score: " + sc
-        count = 0
-        sc = 0
-        speed = 3
-        velocity = 0
-        position = 100
-        foodposition = 0
-        blockpositon = vw
-        positionx = 0
-        score.innerText = "Score: 0"
-        obsBox.style.left = `${blockpositon}px`
-        obsBox.innerHTML = ""
-        obs = document.querySelectorAll(".block")
+function collision() {
+    if (sc > highscorevalue) {
+        highscorevalue = sc
+        highscore.innerText = "High Score: " + highscorevalue
+        localStorage.setItem("highscore", highscorevalue)
 
     }
+    music.pause()
+    music.currentTime = 0
+    const gameovermusic = new Audio("assets/gameover.mp3")
+    gameovermusic.play()
+    console.log(count)
+    paused = true
+    gameover = true
+    menu.style.display = "flex"
+    title.innerText = "Game Over"
+    yrScore.innerText = "Your Score: " + sc
+    count = 0
+    sc = 0
+    speed = 3
+    velocity = 0
+    position = 100
+    foodposition = 0
+    blockpositon = vw
+    positionx = 0
+    score.innerText = "Score: 0"
+    obsBox.style.left = `${blockpositon}px`
+    obsBox.innerHTML = ""
+    obs = document.querySelectorAll(".block")
+
+}
 
 
